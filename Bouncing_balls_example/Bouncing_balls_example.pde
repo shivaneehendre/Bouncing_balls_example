@@ -1,4 +1,4 @@
-Ball[] balls = new Ball[150];
+Ball[] balls = new Ball[5];
 PVector mouse;
 
 void setup() {
