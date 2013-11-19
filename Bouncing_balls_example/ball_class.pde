@@ -6,7 +6,7 @@ class Ball {
   Ball() {
     loc = new PVector(random(width), random(height));
     vel = PVector.random2D();
-    d = 30;
+    d = 70;
     c = color(random(360), 100, 100);
   }
 
@@ -37,9 +37,9 @@ class Ball {
     }
   }
 
-  //As practice, I'm going to create a method that will indicate when the ball touches some point
-  void ballCheck(PVector m) {  //I pass in one argument - a PVector that will be the point I check
-    if (loc.dist(m) < d/2) {  //Check to see if the distance between the center of the circle and the PVector I'm checking is less than the radius
+  //Now I am modifying this to check for another ball
+  void ballCheck(Ball b) {  //I pass in one argument - an object of the ball class
+    if (loc.dist(b.loc) < d/2 + b.d/2) {  //Check to see if the distance between the centers of the circles is less than the radii of the circles
       c = color(random(360), 100, 100);  //Change the color randomly
     }
   }
